@@ -3,3 +3,6 @@
 .gradle/
 .vscode/
 .settings/
+bin/
+build/
+        
