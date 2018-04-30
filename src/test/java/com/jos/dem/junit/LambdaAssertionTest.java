@@ -3,6 +3,7 @@ package com.jos.dem.junit;
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.stream.Stream;
 
@@ -23,11 +24,26 @@ public class LambdaAssertionTest {
 
   @Test
   @DisplayName("Should assert all person attributes at once")
-  void shouldAssertAllPersonAttributes() {
+  public void shouldAssertAllPersonAttributes() {
       assertAll("person",
           () -> assertEquals("josdem", person.getNickname()),
           () -> assertEquals("joseluis.delacruz@gmail.com", person.getEmail())
       );
+  }
+
+  @Test
+  @DisplayName("Should show how works dependent assertions")
+  public void shouldTestDependentAssertions(){
+    assertAll("person1",
+            () -> {
+                String nickname = person.getNickname();
+                assertNotNull(nickname);
+
+                assertAll("nickname",
+                    () -> assertTrue(nickname.startsWith("j")),
+                    () -> assertTrue(nickname.endsWith("m"))
+                );
+            });
   }
 
   
