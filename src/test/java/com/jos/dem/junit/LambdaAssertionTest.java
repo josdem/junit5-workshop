@@ -11,8 +11,8 @@ public class LambdaAssertionTest {
   @Test
   void shouldTestLambdaExpression() {
     assertTrue(Stream.of(1, 2, 3)      
-      .mapToInt(i -> i)
-      .sum() > 5, () -> "Sum should be greater than 5");
+      .mapToInt(Integer::intValue)
+      .sum() == 6, () -> "Sum should be 6");
   }
   
 }
