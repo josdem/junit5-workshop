@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class LambdaAssertionTest {
+public class AssertionShowTestCase {
 
   private Person person = new Person("josdem", "joseluis.delacruz@gmail.com");
 
