@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +36,7 @@ public class AssertionShowTestCase {
   @Test
   @DisplayName("Should show how works dependent assertions")
   public void shouldTestDependentAssertions(){
-    assertAll("person1",
+    assertAll("person",
             () -> {
                 String nickname = person.getNickname();
                 assertNotNull(nickname);
@@ -47,11 +48,17 @@ public class AssertionShowTestCase {
             });
   }
 
-@Test
-@DisplayName("Should throw an exception")
-public void shouldThrowNullPointerException() {
-  Person person = new Person();
-  assertThrows(NullPointerException.class, ()-> person.getNickname());
-}
+  @Test
+  @DisplayName("Should throw an exception")
+  public void shouldThrowNullPointerException() {
+    Person person = new Person();
+    assertThrows(NullPointerException.class, ()-> person.getNickname());
+  }
+
+  @Test
+  @Disabled("Should not execute this test")
+  public void shouldSkipThisTest() {
+    assertTrue(false);
+  }
   
 }
