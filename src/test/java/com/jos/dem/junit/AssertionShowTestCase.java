@@ -2,6 +2,7 @@ package com.jos.dem.junit;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -46,5 +47,11 @@ public class AssertionShowTestCase {
             });
   }
 
+@Test
+@DisplayName("Should throw an exception")
+public void shouldThrowNullPointerException() {
+  Person person = new Person();
+  assertThrows(NullPointerException.class, ()-> person.getNickname());
+}
   
 }
