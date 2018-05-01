@@ -12,13 +12,13 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class AssertionShowTestCase {
+class AssertionShowTest {
 
   private Person person = new Person("josdem", "joseluis.delacruz@gmail.com");
 
   @Test
   @DisplayName("Should show how we can use lambdas in a test")
-  public void shouldTestLambdaExpression() {
+  void shouldTestLambdaExpression() {
     assertTrue(Stream.of(1, 2, 3)      
       .mapToInt(Integer::intValue)
       .sum() == 6, () -> "Sum should be 6");
@@ -26,7 +26,7 @@ public class AssertionShowTestCase {
 
   @Test
   @DisplayName("Should assert all person attributes at once")
-  public void shouldAssertAllPersonAttributes() {
+  void shouldAssertAllPersonAttributes() {
       assertAll("person",
           () -> assertEquals("josdem", person.getNickname()),
           () -> assertEquals("joseluis.delacruz@gmail.com", person.getEmail())
@@ -35,7 +35,7 @@ public class AssertionShowTestCase {
 
   @Test
   @DisplayName("Should show how works dependent assertions")
-  public void shouldTestDependentAssertions(){
+  void shouldTestDependentAssertions(){
     assertAll("person",
             () -> {
                 String nickname = person.getNickname();
@@ -51,13 +51,13 @@ public class AssertionShowTestCase {
   @Test
   @DisplayName("Should throw an exception")
   public void shouldThrowNullPointerException() {
-    Person person = new Person();
+    Person person = null;
     assertThrows(NullPointerException.class, ()-> person.getNickname());
   }
 
   @Test
   @Disabled("Should not execute this test")
-  public void shouldSkipThisTest() {
+  void shouldSkipThisTest() {
     assertTrue(false);
   }
   
