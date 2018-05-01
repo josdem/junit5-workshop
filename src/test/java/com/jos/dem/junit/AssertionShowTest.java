@@ -1,8 +1,11 @@
 package com.jos.dem.junit;
 
+import static java.time.Duration.ofMinutes;
+
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -59,6 +62,17 @@ class AssertionShowTest {
   @Disabled("Should not execute this test")
   void shouldSkipThisTest() {
     assertTrue(false);
+  }
+
+  @Test
+  @DisplayName("Should show how to run a test before timeout")
+  void timeoutNotExceededWithMethod() {
+      String actualGreeting = assertTimeout(ofMinutes(2), AssertionShowTest::greeting);
+      assertEquals("Hello, World!", actualGreeting);
+  }
+
+  private static String greeting() {
+    return "Hello, World!";
   }
   
 }
