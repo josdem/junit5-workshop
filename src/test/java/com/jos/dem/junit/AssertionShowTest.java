@@ -22,7 +22,7 @@ class AssertionShowTest {
   @Test
   @DisplayName("Should show how we can use lambdas in a test")
   void shouldTestLambdaExpression() {
-    assertTrue(Stream.of(1, 2, 3)      
+    assertTrue(Stream.of(1, 2, 3)
       .mapToInt(Integer::intValue)
       .sum() == 6, () -> "Sum should be 6");
   }
@@ -55,7 +55,7 @@ class AssertionShowTest {
   @DisplayName("Should throw an exception")
   public void shouldThrowNullPointerException() {
     Person person = null;
-    assertThrows(NullPointerException.class, ()-> person.getNickname());
+    assertThrows(NullPointerException.class, () -> person.getNickname());
   }
 
   @Test
@@ -74,5 +74,5 @@ class AssertionShowTest {
   private static String greeting() {
     return "Hello, World!";
   }
-  
+
 }
