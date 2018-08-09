@@ -1,7 +1,7 @@
 Junit 5 Workshop
 ------------------------------------
 
-This project shows how to use JUnit 5 framework test structure, mocks and depenencies.
+This project shows how to use JUnit 5 framework test structure, mocks and dependencies.
 
 #### To run the project with Gradle
 
