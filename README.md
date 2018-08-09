@@ -1,22 +1,20 @@
-Java Application project template
+Junit 5 Workshop
 ------------------------------------
 
-You have just created a basic Java application. There is a standard project
-structure for source code and tests.
+This project shows how to use JUnit 5 framework test structure, mocks and depenencies.
 
-In this project you get:
+#### To run the project with Gradle
 
-* A Gradle build file
-* A standard project structure:
+```bash
+gradle test
+```
 
-    <proj>
-      |
-      +- src
-          |
-          +- main
-          |     |
-          |     +- java
-          |
-          +- test
-          |   |
-          |   +- java
+#### To run the project with Maven
+
+```bash
+mvn test
+```
+
+#### Read this as reference
+
+http://josdem.io/techtalk/java/junit5/
