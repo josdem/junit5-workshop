@@ -40,7 +40,7 @@ class StandardTest {
 
   @AfterAll
   static void tearDown() {
-    log.info("After any test execution");
+    log.info("After all test execution");
   }
 
 }
