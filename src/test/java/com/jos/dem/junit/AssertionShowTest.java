@@ -42,11 +42,11 @@ class AssertionShowTest {
     assertAll("person",
             () -> {
                 String nickname = person.getNickname();
-                assertNotNull(nickname);
+                assertNotNull(nickname, "Nickname should not be null");
 
                 assertAll("nickname",
-                    () -> assertTrue(nickname.startsWith("j")),
-                    () -> assertTrue(nickname.endsWith("m"))
+                    () -> assertTrue(nickname.startsWith("j"), "Should starts with j"),
+                    () -> assertTrue(nickname.endsWith("m"), "Should ends with m")
                 );
             });
   }
@@ -67,8 +67,8 @@ class AssertionShowTest {
   @Test
   @DisplayName("Should show how to run a test before timeout")
   void timeoutNotExceededWithMethod() {
-      String actualGreeting = assertTimeout(ofMinutes(2), AssertionShowTest::greeting);
-      assertEquals("Hello, World!", actualGreeting);
+    String actualGreeting = assertTimeout(ofMinutes(2), AssertionShowTest::greeting);
+    assertEquals("Hello, World!", actualGreeting);
   }
 
   private static String greeting() {
