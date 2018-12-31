@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 
 import java.util.logging.Logger;
@@ -17,6 +18,14 @@ class ConditionsShowTest {
   @EnabledIfSystemProperty(named = "environment", matches = "DEV")
   void shouldRunIfDevelopmentEnvironment(){
     log.info("Running: Conditions if is development");
+    assertTrue(true);
+  }
+
+  @Test
+  @DisplayName("Should run if Monday")
+  @EnabledIf("(java.time.LocalDate).now().getDayOfWeek() == 'MONDAY'")
+  void shouldRunIfMonday() {
+    log.info("Running: Conditions if is Monday");
     assertTrue(true);
   }
 
