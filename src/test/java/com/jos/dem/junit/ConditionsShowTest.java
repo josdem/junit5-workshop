@@ -1,0 +1,23 @@
+package com.jos.dem.junit;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
+
+import java.util.logging.Logger;
+
+class ConditionsShowTest {
+
+  private final Logger log = Logger.getLogger(ConditionsShowTest.class.getName());
+
+  @Test
+  @DisplayName("Should run if DEV environment")
+  @EnabledIfSystemProperty(named = "environment", matches = "DEV")
+  void shouldRunIfDevelopmentEnvironment(){
+    log.info("Running: Conditions if is development");
+    assertTrue(true);
+  }
+
+}
