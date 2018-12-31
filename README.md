@@ -6,13 +6,13 @@ This project shows how to use JUnit 5 framework test structure, assertions, assu
 #### To run the project with Gradle
 
 ```bash
-gradle test
+gradle -Denvironment=DEV test
 ```
 
 #### To run the project with Maven
 
 ```bash
-mvn test
+mvn -Denvironment=DEV test
 ```
 
 #### Read this as reference
