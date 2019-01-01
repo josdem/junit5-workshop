@@ -41,9 +41,10 @@ class ParameterizedShowTest {
     assertTrue(EnumSet.of(Environment.DEVELOPMENT, Environment.QA).contains(environment));
   }
 
+  @DisplayName("Allow csv files as parameters")
   @ParameterizedTest
   @CsvFileSource(resources = "/csv.txt", numLinesToSkip = 1)
-  void testWithCsvFileSource(int id, String nickname, String email) {
+  void shouldAllowCsvFileSource(int id, String nickname, String email) {
     assertNotNull(id);
     assertTrue(nickname.length() > 3);
     assertTrue(email.endsWith("email.com"));
