@@ -3,6 +3,8 @@ package com.jos.dem.junit;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.util.EnumSet;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -28,6 +30,14 @@ class ParameterizedShowTest {
   @EnumSource(Environment.class)
   void shouldAllowEnumAsParameters(Environment environment) {
     assertNotNull(environment);
+  }
+
+
+  @DisplayName("Allow certain enum as parameters")
+  @ParameterizedTest
+  @EnumSource(value = Environment.class, names = {"DEVELOPMENT", "QA"})
+  void shouldAllowCertainEnumAsParameters(Environment environment) {
+    assertTrue(EnumSet.of(Environment.DEVELOPMENT, Environment.QA).contains(environment));
   }
 
 }
