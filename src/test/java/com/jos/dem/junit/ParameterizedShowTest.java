@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.util.logging.Logger;
 
@@ -38,6 +39,14 @@ class ParameterizedShowTest {
   @EnumSource(value = Environment.class, names = {"DEVELOPMENT", "QA"})
   void shouldAllowCertainEnumAsParameters(Environment environment) {
     assertTrue(EnumSet.of(Environment.DEVELOPMENT, Environment.QA).contains(environment));
+  }
+
+  @ParameterizedTest
+  @CsvFileSource(resources = "/csv.txt", numLinesToSkip = 1)
+  void testWithCsvFileSource(int id, String nickname, String email) {
+    assertNotNull(id);
+    assertTrue(nickname.length() > 3);
+    assertTrue(email.endsWith("email.com"));
   }
 
 }
