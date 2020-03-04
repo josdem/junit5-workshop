@@ -1,4 +1,4 @@
-def junitJupiterVersion = '5.3.2'
+def junitJupiterVersion = '5.6.0'
 
 apply plugin: "java"
 
@@ -14,10 +14,5 @@ dependencies {
 
 test {
   useJUnitPlatform()
-
-  reports {
-    html.enabled = true
-  }
-
   systemProperties = System.properties
 }
