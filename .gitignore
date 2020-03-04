@@ -1,7 +1,11 @@
-target/
 .gradle/
 .settings/
+.classpath
+.project
+.vscode/
+bin/
 build/
+target/
 **swp
 **swo
 
