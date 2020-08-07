@@ -1,16 +1,10 @@
 package com.jos.dem.junit;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.*;
 
 import java.util.logging.Logger;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StandardTest {
 
@@ -42,5 +36,4 @@ class StandardTest {
   static void tearDown() {
     log.info("After all test execution");
   }
-
 }
