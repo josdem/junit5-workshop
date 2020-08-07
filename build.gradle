@@ -1,4 +1,4 @@
-def junitJupiterVersion = '5.6.0'
+def junitJupiterVersion = '5.6.2'
 
 apply plugin: "java"
 
