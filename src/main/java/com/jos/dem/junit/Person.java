@@ -5,19 +5,16 @@ public class Person {
   private String nickname;
   private String email;
 
-  public Person(){}
-
-  public Person(String nickname, String email){
+  public Person(String nickname, String email) {
     this.nickname = nickname;
     this.email = email;
   }
 
-  public String getNickname(){
+  public String getNickname() {
     return this.nickname;
   }
 
-  public String getEmail(){
+  public String getEmail() {
     return this.email;
   }
-
 }
