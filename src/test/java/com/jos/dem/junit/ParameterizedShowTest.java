@@ -20,7 +20,7 @@ class ParameterizedShowTest {
   @DisplayName("Allow string as parameters")
   @ParameterizedTest
   @ValueSource(strings = {"radar", "anitalavalatina"})
-  void shouldAllowStringAsParamters(String word) {
+  void shouldAllowStringAsParameters(String word) {
     log.info("Running: Parameters as string");
     assertTrue(evaluator.isPalindrome(word));
   }
