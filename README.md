@@ -15,6 +15,18 @@ gradle -Denvironment=DEV test
 mvn -Denvironment=DEV test
 ```
 
+#### To execute a single test with Gradle
+
+```bash
+gradle test --tests=$testName
+```
+
+#### To execute a single test with Maven
+
+```bash
+mvn test -Dtest=$testName
+```
+
 #### Read this as reference
 
 http://josdem.io/techtalk/java/junit5/
