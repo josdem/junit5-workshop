@@ -53,6 +53,19 @@ class ParameterizedShowTest {
     assertTrue(email.endsWith("email.com"));
   }
 
+  @DisplayName("Allow factory method arguments")
+  @ParameterizedTest
+  @MethodSource("players")
+  void shouldBeValidPlayers(String nickname, int ranking){
+    assertTrue(nickname.length() > 3);
+    assertTrue(ranking >= 0 && ranking <=5);
+  }
+
+  private static Stream<Arguments> players() {
+    return Stream.of(
+            Arguments.of("eric", 5), Arguments.of("martinv", 4), Arguments.of("josdem", 5));
+  }
+
   @DisplayName("Allow json files as arguments")
   @ParameterizedTest
   @MethodSource("messages")
