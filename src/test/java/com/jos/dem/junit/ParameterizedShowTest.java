@@ -63,7 +63,7 @@ class ParameterizedShowTest {
 
   private static Stream<Arguments> players() {
     return Stream.of(
-            Arguments.of("eric", 5), Arguments.of("martinv", 4), Arguments.of("josdem", 5));
+            Arguments.of("eric", 5), Arguments.of("martin", 4), Arguments.of("josdem", 5));
   }
 
   @DisplayName("Allow json files as arguments")
