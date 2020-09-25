@@ -56,26 +56,27 @@ class ParameterizedShowTest {
   @DisplayName("Allow factory method arguments")
   @ParameterizedTest
   @MethodSource("players")
-  void shouldBeValidPlayers(String nickname, int ranking){
+  void shouldBeValidPlayers(String nickname, int ranking) {
     assertTrue(nickname.length() > 3);
-    assertTrue(ranking >= 0 && ranking <=5);
+    assertTrue(ranking >= 0 && ranking <= 5);
   }
 
   private static Stream<Arguments> players() {
-    return Stream.of(
-            Arguments.of("eric", 5), Arguments.of("martin", 4), Arguments.of("josdem", 5));
+    return Stream.of(Arguments.of("eric", 5), Arguments.of("martin", 4), Arguments.of("josdem", 5));
   }
 
   @DisplayName("Allow json files as arguments")
   @ParameterizedTest
-  @MethodSource("messages")
-  void shouldBeValidMessages(String json){
-    log.info("json: " + json);
+  @MethodSource("persons")
+  void shouldValidatePersons(Person person) {
+    assertTrue(person.getNickname().length() > 3);
+    assertTrue(person.getEmail().endsWith("email.com"));
   }
 
-  private static Stream<Arguments> messages() {
+  private static Stream<Arguments> persons() {
     return Stream.of(
-            Arguments.of("/json/sms.json"), Arguments.of("/json/pushNotification.json"));
+        Arguments.of(new Person("josdem", "josdem@email.com")),
+        Arguments.of(new Person("martin", "martin@email.com")),
+        Arguments.of(new Person("eric", "eric@email.com")));
   }
-
 }
