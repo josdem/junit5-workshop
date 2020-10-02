@@ -14,6 +14,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.surefire.version>3.0.0-M5</maven.surefire.version>
     <junit.jupiter.version>5.6.2</junit.jupiter.version>
+    <junit.platform.runner.verion>1.7.0</junit.platform.runner.verion>
   </properties>
 
   <dependencies>
@@ -34,6 +35,17 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.jupiter.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-runner</artifactId>
+      <version>${junit.platform.runner.verion}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-commons</artifactId>
+      <version>${junit.platform.runner.verion}</version>
     </dependency>
   </dependencies>
 

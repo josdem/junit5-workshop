@@ -6,9 +6,9 @@ import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 import java.util.logging.Logger;
 
 @TestMethodOrder(OrderAnnotation.class)
-class ExecutionOrderTest {
+class ExecutionMethodOrderTest {
 
-  private final Logger log = Logger.getLogger(ExecutionOrderTest.class.getName());
+  private final Logger log = Logger.getLogger(ExecutionMethodOrderTest.class.getName());
 
   @Test
   @Order(1)
