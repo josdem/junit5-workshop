@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 
@@ -20,6 +21,14 @@ class ConditionsShowTest {
   @EnabledIfSystemProperty(named = "environment", matches = "DEV")
   void shouldRunIfDevelopmentEnvironment(){
     log.info("Running: Conditions if is development");
+    assertTrue(true);
+  }
+
+  @Test
+  @DisplayName("Should run if DEV environment regular expression")
+  @EnabledIfEnvironmentVariable(named = "environment", matches = "D.*")
+  void shouldRunIfDevelopmentEnvironmentWithRegularExpression(){
+    log.info("Running: Conditions if is development with regular expression");
     assertTrue(true);
   }
 
