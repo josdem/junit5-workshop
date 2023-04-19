@@ -4,11 +4,8 @@
 .project
 .vscode/
 .idea/
-gradlew
-gradlew.bat
 bin/
 build/
-gradle/
 target/
 **swp
 **swo
